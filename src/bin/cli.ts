@@ -3,6 +3,7 @@
 import { program } from "commander";
 import { updateVersion } from "../libs/utility";
 import { version } from "../../package.json";
+import { EnmavError } from "../libs/error";
 
 program
     .version(`${version}`)
@@ -10,15 +11,25 @@ program
     .option('--build-max <number>', 'maximum number of build before reset to 0')
     .option('--minor-max <number>', 'maximum number of minor before reset to 0')
     .option('--update-version')
+    .option('--cwd')
     .action(async (options) => {
-        if (Object.entries(options).length !== 0 && options['update-version']) {
-            const configFile = await import(`${process.cwd()}/yuvee.config.json`);
+        if (options.updateVersion) {
+            try {
+                var configFile = await import(`${process.cwd()}/enmav.config.json`);
+            } catch (error: any) {
+                throw new EnmavError(error.message);
+            }
             const { updaterOptions } = configFile;
+            const filePath = options.file ? options.file.replace(/^[.\/]+/g, '') : updaterOptions.packageFile.replace(/^[.\/]+/g, '');
+            console.log(filePath)
             await updateVersion({
-                packageFile: options.file || updaterOptions.packageFile,
-                build_max: options['build-max'] || updaterOptions.build_max,
-                minor_max: options['minor-max'] || updaterOptions.minor_max
+                packageFile: `${process.cwd()}/${filePath}`,
+                build_max: options.buildMax || updaterOptions.build_max,
+                minor_max: options.minorMax || updaterOptions.minor_max
             })
+        };
+        if (options.cwd) {
+            console.log(process.cwd())
         }
     })
 
