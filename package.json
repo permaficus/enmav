@@ -1,0 +1,42 @@
+{
+  "name": "yuvee",
+  "version": "0.9.12",
+  "main": "pub/src/index.js",
+  "scripts": {
+    "build": "rm -rf pub && node vupd.js && tsc"
+  },
+  "bin": {
+    "yuvee": "pub/src/bin/cli.js"
+  },
+  "files": [
+    "pub",
+    "package.json",
+    "license.md",
+    "README.md"
+  ],
+  "keywords": [
+    "versioning",
+    "auto versioning",
+    "npm versioning",
+    "package versioning",
+    "version updater"
+  ],
+  "author": "permaficus<abukhalif2019@gmail.com>",
+  "license": "MIT",
+  "description": "Yuvee is an auto version updater each time you build your JS or TS Project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/permaficus/yuvee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/permaficus/yuvee/issues"
+  },
+  "homepage": "https://github.com/permaficus/yuvee#readme",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0"
+  }
+}
