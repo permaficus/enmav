@@ -1,12 +1,12 @@
 {
-  "name": "yuvee",
-  "version": "0.9.12",
+  "name": "enmav",
+  "version": "0.3.4",
   "main": "pub/src/index.js",
   "scripts": {
     "build": "rm -rf pub && node vupd.js && tsc"
   },
   "bin": {
-    "yuvee": "pub/src/bin/cli.js"
+    "enmav": "pub/src/bin/cli.js"
   },
   "files": [
     "pub",
@@ -23,15 +23,15 @@
   ],
   "author": "permaficus<abukhalif2019@gmail.com>",
   "license": "MIT",
-  "description": "Yuvee is an auto version updater each time you build your JS or TS Project",
+  "description": "enMAV is an auto version updater each time you build your JS or TS Project",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/permaficus/yuvee.git"
+    "url": "git+https://github.com/permaficus/enmav.git"
   },
   "bugs": {
-    "url": "https://github.com/permaficus/yuvee/issues"
+    "url": "https://github.com/permaficus/enmav/issues"
   },
-  "homepage": "https://github.com/permaficus/yuvee#readme",
+  "homepage": "https://github.com/permaficus/enmav#readme",
   "dependencies": {
     "commander": "^12.1.0",
     "typescript": "^5.4.5"
