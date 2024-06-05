@@ -8,5 +8,5 @@ export type UpdateArguments = {
 }
 export type Options = UpdateArguments
 export type BundlerOptions = {
-    bundler: 'tsc' | 'rollup' | 'tsup' | 'node'
+    bundler: 'tsc' | 'rollup' | 'tsup' | 'commonjs'
 }
