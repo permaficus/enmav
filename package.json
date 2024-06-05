@@ -1,9 +1,9 @@
 {
   "name": "enmav",
-  "version": "0.3.4",
+  "version": "0.4.18",
   "main": "pub/src/index.js",
   "scripts": {
-    "build": "rm -rf pub && node vupd.js && tsc"
+    "build:tsc": "rm -rf pub && node vupd.js && tsc"
   },
   "bin": {
     "enmav": "pub/src/bin/cli.js"
@@ -19,7 +19,8 @@
     "auto versioning",
     "npm versioning",
     "package versioning",
-    "version updater"
+    "version updater",
+    "semantic versioning"
   ],
   "author": "permaficus<abukhalif2019@gmail.com>",
   "license": "MIT",
