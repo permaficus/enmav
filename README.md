@@ -1,10 +1,10 @@
 # enMAV 
 
 <p align="left">
-<img src="https://img.shields.io/badge/Only-blue?logo=TypeScript&logoSize=auto&labelColor=white
-">
-<img src="https://img.shields.io/badge/npm-red?logo=npm&logoSize=auto&labelColor=white
-">
+<code><img src="https://img.shields.io/badge/Only-blue?logo=TypeScript&logoSize=auto&labelColor=white
+"></code>
+<code><img src="https://img.shields.io/badge/npm-red?logo=npm&logoSize=auto&labelColor=white
+"></code>
 </p>
 
 Just another auto semantic versioning for NPM publisher
@@ -42,7 +42,6 @@ The output would be :
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    // test script
     "build:asv": "enmav --update-version && rollup"
   },
   "keywords": [],
