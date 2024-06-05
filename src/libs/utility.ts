@@ -44,6 +44,7 @@ export const callingInit = async (options?: BundlerOptions): Promise<void> => {
 export const writeDefaultConfig = async (options: BundlerOptions) => {
     const defaultConfig = {
         updaterOptions: {
+            packageFile: './package.json',
             buildMax: 100,
             minorMax: 20,
             bundler: options.bundler
