@@ -3,7 +3,10 @@ import { FileHandle } from "fs/promises"
 
 export type UpdateArguments = {
     packageFile: PathLike | FileHandle
-    build_max: number
-    minor_max: number
+    buildMax: number
+    minorMax: number
 }
 export type Options = UpdateArguments
+export type BundlerOptions = {
+    bundler: 'tsc' | 'rollup' | 'tsup' | 'node'
+}
