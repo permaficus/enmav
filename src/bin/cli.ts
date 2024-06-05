@@ -21,6 +21,7 @@ program
                 throw new EnmavError(error.message);
             }
             const { updaterOptions } = configFile;
+          
             const { buildMax, minorMax } = {
                 buildMax: options.buildMax || updaterOptions.buildMax,
                 minorMax: options.minorMax || updaterOptions.minorMax
