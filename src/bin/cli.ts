@@ -42,7 +42,6 @@ program
             await writeDefaultConfig({
                 bundler
             })
-            process.exit(1)
         }
     })
 

@@ -19,7 +19,6 @@ export const updateVersion = async (args: UpdateArguments): Promise<void> => {
         pkgJson.version = version
 
         await writeFile(args.packageFile, JSON.stringify(pkgJson, null, 2), 'utf8')
-        process.exit(1);
     } catch (error: any) {
         // throw new error
         throw new EnmavError(error.message)
