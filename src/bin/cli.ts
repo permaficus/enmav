@@ -12,7 +12,7 @@ program
     .option('--minor-max <number>', 'maximum number of minor before reset to 0')
     .option('--init')
     .option('--update-version')
-    .addOption(new Option('--bundler <bundler>', 'package bundler').choices(['tsc', 'rollup', 'tsup', 'node']))
+    .addOption(new Option('--bundler <bundler>', 'package bundler').choices(['tsc', 'rollup', 'tsup', 'commonjs']))
     .action(async (options) => {
         if (options.updateVersion) {
             try {
