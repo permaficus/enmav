@@ -21,7 +21,11 @@ program
                 throw new EnmavError(error.message);
             }
             const { updaterOptions } = configFile;
-            const { buildMax, minorMax } = options || updaterOptions;
+
+            const { buildMax, minorMax } = {
+                buildMax: options.buildMax || updaterOptions.buildMax,
+                minorMax: options.minorMax || updaterOptions.minorMax
+            }
             // exit if one of the value is zero
             if (buildMax === 0 || minorMax === 0) {
                 process.exit(1);
