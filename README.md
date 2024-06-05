@@ -14,10 +14,8 @@ Every time you build or patch your TypeScript project, enMAV will automatically 
 ### Installation
 
 ```shell
-npm i enmav -D
+npm i enmav -g
 ```
-
-It's recommended you install it locally
 
 ### Usage
 
