@@ -1,10 +1,8 @@
 # enMAV 
 
 <p align="left">
-<code><img src="https://img.shields.io/badge/Only-blue?logo=TypeScript&logoSize=auto&labelColor=white
-"></code>
-<code><img src="https://img.shields.io/badge/npm-red?logo=npm&logoSize=auto&labelColor=white
-"></code>
+<code><img src="https://img.shields.io/badge/Only-blue?logo=TypeScript&logoSize=auto&labelColor=white"></code>
+<code><img src="https://img.shields.io/badge/npm-red?logo=npm&logoSize=auto&labelColor=white"></code>
 </p>
 
 Just another auto semantic versioning for NPM publisher
