@@ -9,11 +9,16 @@ export const updateVersion = async (args: UpdateArguments): Promise<void> => {
         const splitVersion = pkgJson.version.split(".");
         let version: string;
         let [major, minor, build] = [+splitVersion[0], +splitVersion[1], +splitVersion[2]];
-    
-        build >=0 && build < args.buildMax ? build++ : build = 1;
-        build === args.buildMax ? minor++ : null;
-        minor > args.minorMax ? major++ : null;
-        minor === (args.minorMax + 1) ? minor = 0 : null
+        
+        build++;
+        if (build > args.buildMax) {
+            minor++;
+            build = 1;
+        }
+        if (minor > args.minorMax) {
+            major++;
+            minor = 1;
+        }
     
         version = `${major}.${minor}.${build}`
         pkgJson.version = version
