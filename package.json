@@ -1,8 +1,9 @@
 {
   "name": "enmav",
-  "version": "0.7.1",
+  "version": "0.7.10",
   "main": "pub/src/index.js",
   "scripts": {
+    "build": "rm -rf && tsc",
     "build:tsc": "rm -rf pub && node vupd.js && tsc"
   },
   "bin": {
