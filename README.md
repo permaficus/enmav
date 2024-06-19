@@ -47,4 +47,21 @@ The output would be :
 }
 ```
 
+### Configuration
+
+To specify the maximum build number and minor version number, refer to the example below. The configuration file is located in the root of your project folder.
+
+`enmav.config.json`
+
+```json
+{
+  "updaterOptions": {
+    "packageFile": "./package.json",
+    "buildMax": 100,
+    "minorMax": 20,
+    "bundler": "tsc"
+  }
+}
+```
+
 
