@@ -2,7 +2,7 @@ import { PathLike } from "fs"
 import { FileHandle } from "fs/promises"
 
 export type UpdateArguments = {
-    packageFile: PathLike | FileHandle
+    packageFile: Array<PathLike | FileHandle>
     buildMax: number
     minorMax: number
 }
