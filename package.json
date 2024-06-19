@@ -1,6 +1,6 @@
 {
   "name": "enmav",
-  "version": "0.7.10",
+  "version": "0.7.12",
   "main": "pub/src/index.js",
   "scripts": {
     "build": "rm -rf && tsc",
