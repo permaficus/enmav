@@ -33,7 +33,7 @@ program
 
             const filePath = options.file ? options.file.replace(/^[.\/]+/g, '') : updaterOptions.packageFile.replace(/^[.\/]+/g, '');
             await updateVersion({
-                packageFile: `${process.cwd()}/${filePath}`,
+                packageFile: [`${process.cwd()}/${filePath}`, `${process.cwd()}/package-lock.json`],
                 buildMax,
                 minorMax
             })

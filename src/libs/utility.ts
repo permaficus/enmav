@@ -4,26 +4,32 @@ import { EnmavError } from './error';
 
 export const updateVersion = async (args: UpdateArguments): Promise<void> => {
     try {
-        const sourceFile = await readFile(args.packageFile, 'utf8');
-        const pkgJson = JSON.parse(sourceFile);
-        const splitVersion = pkgJson.version.split(".");
-        let version: string;
-        let [major, minor, build] = [+splitVersion[0], +splitVersion[1], +splitVersion[2]];
-        
-        build++;
-        if (build > args.buildMax) {
-            minor++;
-            build = 1;
-        }
-        if (minor > args.minorMax) {
-            major++;
-            minor = 1;
-        }
-    
-        version = `${major}.${minor}.${build}`
-        pkgJson.version = version
+        args.packageFile.forEach(async (files: any) => {
 
-        await writeFile(args.packageFile, JSON.stringify(pkgJson, null, 2), 'utf8')
+            const sourceFile = await readFile(files, 'utf8');
+            const pkgJson = JSON.parse(sourceFile);
+            const splitVersion = pkgJson.version.split(".");
+            let version: string;
+            let [major, minor, build] = [+splitVersion[0], +splitVersion[1], +splitVersion[2]];
+            
+            build++;
+            if (build > args.buildMax) {
+                minor++;
+                build = 1;
+            }
+            if (minor > args.minorMax) {
+                major++;
+                minor = 1;
+            }
+        
+            version = `${major}.${minor}.${build}`;
+            pkgJson.version = version;
+            if (/package-lock\.json/.test(files)) {
+                pkgJson.packages[""].version = version;
+            }
+    
+            await writeFile(files, JSON.stringify(pkgJson, null, 2), 'utf8')
+        })
     } catch (error: any) {
         // throw new error
         throw new EnmavError(error.message)
